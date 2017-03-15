@@ -5,3 +5,14 @@ $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }

@@ -1,8 +1,27 @@
+<div class="container">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Meow:</strong>
-  <%= @post.content %>
+
+
+  <div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title"> <%= @post.content %></span>
+        <p>  <%= @post.user.username %></p>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </p>
 
 <p>
@@ -10,5 +29,14 @@
   <%= @post.user.inspect %>
 </p>
 
+<%= link_to @follow_status, toggle_follow_post_path %>
+<%= link_to @like_status, toggle_like_post_path %>
+
+
+  <div class="chip">
+    <%= @post.user.username %>
+  </div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
+</div>

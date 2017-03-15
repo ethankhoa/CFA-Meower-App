@@ -12,13 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label :meow %>
     <%= f.text_area :content %>
   </div>
 
 
 
   <div class="actions">
-    <%= f.submit %>
+    <% f.submit %>
+    <button class="btn waves-effect waves-dark green" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
   </div>
 <% end %>
