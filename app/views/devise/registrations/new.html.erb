@@ -1,4 +1,13 @@
-<h2>Sign up</h2>
+
+<%= render 'partials/nav' %>
+
+<div class="container">
+  <div class="row">
+  <div class="col s12">
+    <h1>Ready to become a Meower?</h1>
+
+<div class="card-panel">
+  <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -29,3 +38,8 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+</div>
+</div>
+</div>

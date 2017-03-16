@@ -18,6 +18,7 @@ class User < ApplicationRecord
     end
   end
 
+
   # setting login as email or username from Divise
   def login=(login)
   @login = login

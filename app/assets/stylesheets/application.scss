@@ -5,7 +5,7 @@ $secondary-color: color("yellow", "base") !default;
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "pages";
 
   body {
     display: flex;
@@ -16,3 +16,11 @@ $secondary-color: color("yellow", "base") !default;
   main {
     flex: 1 0 auto;
   }
+
+.user-box {
+
+  width: 500px;
+  height: 500px;
+  border: 1px;
+
+}

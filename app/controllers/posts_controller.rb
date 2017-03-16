@@ -14,10 +14,13 @@ class PostsController < ApplicationController
   def show
     @follow_status = current_user.follows?(@post.user) ? 'Unfollow' : 'Follow'
     @like_status = current_user.likes?(@post) ? 'Unlike' : 'Like'
+
   end
 
+
+
   def toggle_follow
-    current_user.toggle_follow!(User.find(params[:user_id]))
+    @user.toggle_follow!(User.find(params[:user_id]))
     redirect_to :back
   end
 
@@ -31,6 +34,17 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+  def self.following_list
+      #  @user = User.find(params[:user])
+       current_user.followees(User)
+      #  @users = User.all
+
+      #  response = {:user => @user, :following => @following, :users => @users}
+
+
+  end
+
 
   # GET /posts/1/edit
   def edit
@@ -81,7 +95,7 @@ class PostsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.find(params[:id])
+      @post = Post.find(params[:id]) # pulling id from URL, only variable available
     end
 
 

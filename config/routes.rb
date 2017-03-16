@@ -7,10 +7,15 @@ Rails.application.routes.draw do
   end
 
 
+  authenticated :user do
+    root 'pages#feed', as: :authenticated_root
+    end
+
+    root "pages#index"
 
   resources :profiles, only: [:edit]
   devise_for :users
-  root 'pages#index'
+
 
   get 'pages/profile'
 
