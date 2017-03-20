@@ -2,9 +2,9 @@
 
 
 
-<h1>Posts</h1>
+<h1>Meows from across the world!</h1>
 
-<table>
+<table class="highlight bordered">
   <thead>
     <tr>
       <th>Content</th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="collection">
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.content %></td>

@@ -14,9 +14,7 @@ class PostsController < ApplicationController
   def show
     @follow_status = current_user.follows?(@post.user) ? 'Unfollow' : 'Follow'
     @like_status = current_user.likes?(@post) ? 'Unlike' : 'Like'
-
   end
-
 
 
   def toggle_follow
@@ -35,13 +33,15 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def self.following_list
-      #  @user = User.find(params[:user])
-       current_user.followees(User)
-      #  @users = User.all
+  def following_posts
 
-      #  response = {:user => @user, :following => @following, :users => @users}
 
+  end
+
+
+  def following_list
+
+      @following_user_list = current_user.followees(User)
 
   end
 
@@ -109,4 +109,6 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:content, :user_id)
     end
+
+
 end

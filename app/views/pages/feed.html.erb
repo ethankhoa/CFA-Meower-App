@@ -1,5 +1,44 @@
-<h1>Welcome to your Meow feed.></h1>
-<p>Meow.</p>
+<div class="container">
 
 
-<p>WTF BULLSHIET</p>
+<h1 class="center-align">MEOWER FEED</h1>
+<%= current_user.username %>
+<p>Meows from the Meowers you follow.</p>
+
+<% if @followed_posts.empty? %>
+  <%="Hey #{current_user.username}! Doesn't look like you're following anybody. Let's find you some Meowers to follow!"%>
+<%  else %>
+<ul class="collection">
+
+<% @followed_posts.each do |p| %>
+<li class="collection-item avatar"><%= p.user.username%> <%= p.content%><%= p.created_at.strftime("%B %e, %Y at %I:%M %p") %>
+  <%= link_to @like_status.inspect, toggle_like_post_path(id: p.id) %>
+</li>
+</li>
+<%end%>
+</ul>
+<%end%>
+
+
+<ul>
+
+<% @users_posts.each do |p|  %>
+<li><%= p.user.username %> <p><%= p.content %></p><p><%= p.user_id %></p></li>
+<% end %>
+</ul>
+
+
+<%= "XX" *100 %>
+
+<p>Here are the Meowers that you're following.</p>
+
+<ul>
+
+<% @followed_users.each do |p| %>
+<li><%= p.username %> <p>View their profile</p>
+</li>
+<% end %>
+</ul>
+
+
+</div>

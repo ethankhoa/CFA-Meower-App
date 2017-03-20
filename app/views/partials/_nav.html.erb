@@ -2,8 +2,9 @@
   <div class="nav-wrapper">
     <a href="/" class="brand-logo center">Meower</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to 'New Meow', new_post_path %></li>
-      <li><%= link_to 'Meowfile', new_post_path %></li>
+      <li><%= link_to 'Post Meow', new_post_path %></li>
+      <li><%= link_to "Meowfile", new_post_path %></li>
+      <li><%= link_to "All Meows", posts_path %></li>
       <% if user_signed_in? %>
       <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
       <% else %>
